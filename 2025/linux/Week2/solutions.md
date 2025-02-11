@@ -34,10 +34,10 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
               
           - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
              Add the following line in /etc/ssh/sshd_config file and restart the sshd service
-  
-       #Restrict SSH login for certain users in /etc/ssh/sshd_config
-       DenyUsers devops_user        
-       sudo systemctl restart ssh.service
+      
+         #Restrict SSH login for certain users in /etc/ssh/sshd_config
+         DenyUsers devops_user        
+         sudo systemctl restart ssh.service
 
 ---
 
