@@ -26,15 +26,12 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
         sudo usermod -aG devops_team devops_user  (This command will add the devops_user in the devops_team group)               
                  
     - Set a password and grant **sudo** access.
-        The command mentioned in the above section will set the password for the user
-        
-        sudo passwd devops_user  (This command will set the password for the user)
-        
+        Solution -> The command mentioned in the above section will set the password for the user        
+        sudo passwd devops_user  (This command will set the password for the user)        
         sudo usermod -aG sudo devops_user  (This command will add the devops_user to sudo group and will able to perform all the root user's operations)
               
     - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
-             Add the following line in /etc/ssh/sshd_config file and restart the sshd service
-      
+         Solution -> Add the following line in /etc/ssh/sshd_config file and restart the sshd service      
          #Restrict SSH login for certain users in /etc/ssh/sshd_config
          DenyUsers devops_user        
          sudo systemctl restart ssh.service
