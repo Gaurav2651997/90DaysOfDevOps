@@ -15,8 +15,29 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
 - Learn about Linux **users, groups, and permissions** (`/etc/passwd`, `/etc/group`).
 - **Task:**  
   - Create a user `devops_user` and add them to a group `devops_team`.
-  - Set a password and grant **sudo** access.
-  - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
+  **Solution** -> sudo useradd -m devops_user  (This command will create the user)
+       sudo passwd devops_user  (This command will set the password for the user)
+       Now try to login to the user with this command -> su - devops_user          
+        Now create a new group called devops_team and add the above devops_user in the group
+        
+        sudo newgrp devops_team  (This command will create a new group)
+        Verify if the new group is created successfully by checking the entry in the '/etc/group' file        
+        sudo usermod -aG devops_team devops_user  (This command will add the devops_user in the devops_team group)               
+                 
+          - Set a password and grant **sudo** access.
+        The command mentioned in the above section will set the password for the user
+        
+        sudo passwd devops_user  (This command will set the password for the user)
+        
+        sudo usermod -aG sudo devops_user  (This command will add the devops_user to sudo group and will able to perform all the root user's operations)
+          
+          - Restrict SSH login for certain users in `/etc/ssh/sshd_config`.
+        Add the following line in /etc/ssh/sshd_config file and restart the sshd service
+  
+       #Restrict SSH login for certain users in /etc/ssh/sshd_config
+       DenyUsers devops_user
+        
+       sudo systemctl restart ssh.service
 
 ---
 
