@@ -43,9 +43,19 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
 ### **2️⃣ File & Directory Permissions**
 - **Task:**  
   - Create `/devops_workspace` and a file `project_notes.txt`.
+    Solution -> mkdir devops_workspace
+
+                touch project_notes.txt 
+
   - Set permissions:
     - **Owner can edit**, **group can read**, **others have no access**.
+   
+    Solution -> chmod 640 project_notes.txt
+      
   - Use `ls -l` to verify permissions.
+
+    Solution -> ubuntu@ip-172-31-90-184:~/devops_workspace$ ls -l
+                -rw-r----- 1 ubuntu ubuntu 0 Feb 12 10:23 project_notes.txt
 
 ---
 
