@@ -55,6 +55,7 @@ Imagine you're managing a **Linux-based production server** and need to ensure t
   - Use `ls -l` to verify permissions.
 
     Solution -> ubuntu@ip-172-31-90-184:~/devops_workspace$ ls -l
+    
                 -rw-r----- 1 ubuntu ubuntu 0 Feb 12 10:23 project_notes.txt
 
 ---
